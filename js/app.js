@@ -1,12 +1,17 @@
+// Load environment variables in development
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 // Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCeb_VApBGHAIXD_tAo1IuK_WhYCU0sRVg",
-    authDomain: "rideralert-b3e33.firebaseapp.com",
-    projectId: "rideralert-b3e33",
-    storageBucket: "rideralert-b3e33.appspot.com",
-    messagingSenderId: "197479451270",
-    appId: "1:197479451270:web:f92dc2ac9a08e7669b9f07",
-    measurementId: "G-N8G21ZPKPL"
+    apiKey: process.env.FIREBASE_API_KEY,
+    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.FIREBASE_APP_ID,
+    measurementId: process.env.FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
